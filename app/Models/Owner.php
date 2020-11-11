@@ -59,8 +59,11 @@ class Owner extends Model
         else if ($number === 1){
             return "Yes we have {$number} banana";
         }
-        
-        else{return "Yes we have {$number} bananas";}
+
+        else
+        {
+            return "Yes we have {$number} bananas";
+        }
 
     }
 
@@ -75,10 +78,15 @@ class Owner extends Model
         //Owner::givenEmailExists() to call
     }
 
-    public static function validPhoneNumber()
+    public static function validPhoneNumber($telephone)
     {
+        if (strlen($telephone) < 10 || strlen($telephone) > 14) {
+            return false;
+        } 
+        else if (preg_match("/[a-z]/i", $telephone)) {
+            return false;
+        }
+       return true;
+        }
         
     }
-
-
-}
