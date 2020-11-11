@@ -7,7 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 
 class Owner extends Model
-{
+{   
+    protected $fillable = ["first_name", "last_name", "telephone", "email", "address_1", "address_2", "town", "postcode"];
     use HasFactory;
 
     public function fullName()
@@ -48,6 +49,35 @@ class Owner extends Model
         return $phoneNumbersStartingwithZero;
 
         //Owner::phoneNumbersStartingwithZero() to call
+    }
+
+    public static function haveWeBananas($number)
+    {
+        if ($number === 0) {
+            return "No we have no bananas";
+        }
+        else if ($number === 1){
+            return "Yes we have {$number} banana";
+        }
+        
+        else{return "Yes we have {$number} bananas";}
+
+    }
+
+    public static function givenEmailExists($email) //static method 
+    {
+        $givenEmailExists = Owner::where('email', '=', $email)->get();
+        return $givenEmailExists;
+        // if ($givenEmailExists = null){
+        //     echo('this email already exists');}
+        //     else {echo('this email does not exist');}
+        
+        //Owner::givenEmailExists() to call
+    }
+
+    public static function validPhoneNumber()
+    {
+        
     }
 
 
