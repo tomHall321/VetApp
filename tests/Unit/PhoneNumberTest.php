@@ -10,6 +10,8 @@ use App\Models\Owner;
 class PhoneNumberTest extends TestCase
 {
     use RefreshDatabase;
+    protected $model = Owner::class;
+
     /**
      * A basic unit test example.
      *

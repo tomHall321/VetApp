@@ -14,6 +14,8 @@ class OwnerSeeder extends Seeder
      */
     public function run()
     {
+        // factory(App\Models\Owner::class, 50)->create();
+
         Owner::factory()
         //looks for factory associated with Owner model
         ->times(100)

@@ -1,7 +1,6 @@
 <?php
 
 namespace Database\Factories;
-
 use App\Models\Owner;
 use Illuminate\Database\Eloquent\Factories\Factory;
 
@@ -22,14 +21,14 @@ class OwnerFactory extends Factory
     public function definition()
     {
         return [
-            'first_name'=>'Bill',
-            'last_name'=>'Gates',
-            'telephone'=>'07654666789',
-            'email'=>'windows@windows.com',
-            'address_1'=>'123',
-            'address_2'=>'Windows Lane',
-            'town'=>'San Francisco',
-            'postcode'=>'SL1 W1N',
+            'first_name' => $this->faker->firstName,
+            'last_name'=> $this->faker->lastName,
+            'telephone'=> $this->faker->e164PhoneNumber,
+            'email'=> $this->faker->email,
+            'address_1'=>$this->faker->streetAddress,
+            'address_2'=>$this->faker->secondaryAddress,
+            'town'=>$this->faker->city,
+            'postcode'=>$this->faker->postcode,
         ];
     }
 }
