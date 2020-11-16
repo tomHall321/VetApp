@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Owners;
+use App\Http\Controllers\Home;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [Home::class, "greeting"]);
+
+Route::get('/owners', [Owners::class, "owner"]);
+
+Route::get('/owners/{owner}', [Owners::class, "show"]);

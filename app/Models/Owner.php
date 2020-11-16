@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
+use Carbon\Carbon;
 
 class Owner extends Model
 {   
@@ -55,16 +56,12 @@ class Owner extends Model
     {
         if ($number === 0) {
             return "No we have no bananas";
-        }
-        else if ($number === 1){
+        } 
+        if ($number === 1){
             return "Yes we have {$number} banana";
-        }
-
-        else
-        {
-            return "Yes we have {$number} bananas";
-        }
-
+        }  
+        return "Yes we have {$number} bananas";
+        
     }
 
     public static function givenEmailExists($email) //static method 
@@ -87,6 +84,6 @@ class Owner extends Model
             return false;
         }
        return true;
-        }
-        
+        }    
+    
     }

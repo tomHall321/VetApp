@@ -17,5 +17,6 @@ class ValidPhoneNumberTest extends TestCase
          $this->assertFalse(Owner::validPhoneNumber('sdasdjaodiaj'));
          $this->assertTrue(Owner::validPhoneNumber('07835467859'));
          $this->assertFalse(Owner::validPhoneNumber('12345'));
+    
     }
 }
