@@ -7,12 +7,13 @@ use Illuminate\Http\Request;
 use App\Models\Owner;
 use App\Http\Requests\API\OwnerRequest;
 use App\Http\Resources\API\OwnerResource;
+use App\Http\Resources\API\OwnerListResource;
 
 class Owners extends Controller
 {
     public function index(Owner $owner)
     {
-        return Owner::all();
+        return AnimalListResource::collection(Animal::all());
     }
 
     public function show(Owner $owner)
