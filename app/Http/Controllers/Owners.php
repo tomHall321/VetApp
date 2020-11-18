@@ -10,18 +10,17 @@ class Owners extends Controller
 
     public function owner()
     {
-        // return $owner = Owner::paginate(15);
-        return view("owners", [
+        return view("owners/index", [
             "owners" => Owner::all()
-            ]);
+        ]);
+        
     }
 
     public function show(Owner $owner)
     {
-        return view("owners", [
+        return view("owners/show", [
             "owners" => $owner
             ]);
     }
 
 }
-  

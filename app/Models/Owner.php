@@ -6,10 +6,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Str;
 use Carbon\Carbon;
+use App\Models\Animal;
 
 class Owner extends Model
 {   
-    protected $fillable = ["first_name", "last_name", "telephone", "email", "address_1", "address_2", "town", "postcode"];
+    protected $fillable = ["id", "first_name", "last_name", "telephone", "email", "address_1", "address_2", "town", "postcode"];
     use HasFactory;
 
     public function fullName()
@@ -84,6 +85,11 @@ class Owner extends Model
             return false;
         }
        return true;
-        }    
-    
     }
+    
+    public function animals()
+    {
+        return $this->hasMany(Animal::class);
+    }    
+    
+}
