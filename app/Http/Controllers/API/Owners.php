@@ -13,7 +13,7 @@ class Owners extends Controller
 {
     public function index(Owner $owner)
     {
-        return AnimalListResource::collection(Animal::all());
+        return OwnerListResource::collection(Owner::all());
     }
 
     public function show(Owner $owner)
